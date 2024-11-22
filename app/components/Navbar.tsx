@@ -13,7 +13,7 @@ const Navbar = () => {
       <ul className="text-gray-900 flex justify-between items-center p-4 bg-gradient-to-tr from-green-200 via-green-300 to-green-400">
         <li className="flex gap-4 items-center">
           <div>
-            <Image src="/icon.png" width={50} height={50} alt="Icon" />
+            <Image src={`/icon.png`} width={50} height={50} alt="Icon" />
           </div>
           <div className="text-3xl font-bold">Gormandize</div>
         </li>
