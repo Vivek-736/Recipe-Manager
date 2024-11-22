@@ -3,7 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { cache } from "react";
 
-interface ProductPageProps {
+interface RecipePageProps {
     params: {
         id: string;
     };
@@ -15,9 +15,9 @@ const getProduct = cache(async (id: string) => {
     return product;
 });
 
-export default async function ProductPage({
+export default async function RecipePage({
     params: { id },
-}: ProductPageProps) {
+}: RecipePageProps) {
     const product = await getProduct(id);
 
     return (
