@@ -4,9 +4,8 @@ import { notFound } from "next/navigation";
 import { cache } from "react";
 
 interface RecipePageProps {
-    params: {
-        id: string;
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    params: Promise<any>;
 }
 
 const getProduct = cache(async (id: string) => {
@@ -16,8 +15,9 @@ const getProduct = cache(async (id: string) => {
 });
 
 export default async function RecipePage({
-    params: { id },
+    params,
 }: RecipePageProps) {
+    const { id } = await params;
     const product = await getProduct(id);
 
     return (
