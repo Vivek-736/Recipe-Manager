@@ -9,7 +9,7 @@ import { useRouter } from "next/navigation";
 export default function Home() {
   const session = useSession();
   const router = useRouter();
-  
+
   useEffect(() => {
     if (session?.status === "authenticated") {
       router.push("/recipes")
@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <div className="overflow-hidden min-h-screen bg-gradient-to-b from-blue-100 via-white to-green-100">
         <div className="flex flex-col md:flex-row items-center justify-center h-screen px-6 md:px-12 lg:px-24">
-          <div className="flex flex-col items-center md:items-start text-center md:text-left mt-44 md:mt-0">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-800 leading-snug md:leading-tight">
               Explore Recipes, <br />
               <span className="text-green-500">Create Your Own</span>
@@ -39,19 +39,22 @@ export default function Home() {
               </Link>
             </div>
           </div>
-
-          <div className="mt-10 md:mt-0 md:ml-12 flex justify-center mb-4 md:mb-0">
-            <div className="relative">
-              <Image
-                src={`/screen.png`}
-                width={300}
-                height={300}
-                alt="Icon"
-                className="rounded-lg shadow-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-tr from-transparent to-blue-300 blur-xl opacity-50 rounded-lg"></div>
+          
+          <div className="hidden md:block">
+            <div className="mt-10 md:mt-0 md:ml-12 flex justify-center mb-4 md:mb-0">
+              <div className="relative">
+                <Image
+                  src={`/screen.png`}
+                  width={300}
+                  height={300}
+                  alt="Icon"
+                  className="rounded-lg shadow-xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent to-blue-300 blur-xl opacity-50 rounded-lg"></div>
+              </div>
             </div>
           </div>
+
         </div>
       </div>
     </>
