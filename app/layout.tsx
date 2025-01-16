@@ -19,6 +19,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Gormandize - recipes and stuff",
   description: "A blog about food and stuff",
+  viewport: 'width=device-width, initial-scale=1.0'
 };
 
 export default function RootLayout({
